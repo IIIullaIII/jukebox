@@ -1,13 +1,18 @@
 
 jukebox_list={
-"No_me_moleste_mosquito",
-"Hustle",
-"El_Condor_Pasa",
-"Concrete_jungle",
-"bad_operator",
-"Ly_o_lay_Ale_Loya",
-"Camuendo",
-"Canto_di_guerra"
+"1",
+"2",
+"3",
+"4",
+"5",
+"6",
+"7",
+"8",
+"9",
+"10",
+"11",
+"12"
+
 }
 
 jukeboxloop={}
@@ -36,23 +41,23 @@ minetest.register_node("jukebox:juke", {
 	sounds = default.node_sound_defaults(),
 	after_place_node = function(pos, placer, itemstack)
 		local meta = minetest.get_meta(pos)
-		local but="button[1,0.3;2,1;stop;STOP!] button[0,2.2;4,1;loop;Loop] button_exit[1,3.7;2,1;exit;EXIT]"
+		local but="button[2,0.1;4,1;stop;STOP!] button[3,2.2;2,1.5;loop;Loop] button_exit[2,4.5;4,2;exit;EXIT]"
 		local x=-0
 		local y=1
         
-		meta:set_string("infotext", "Jokebox")
+		meta:set_string("infotext", "Jukebox")
 		meta:set_int("loop", 0)
 		for i, list in pairs(jukebox_list) do
-			but=but.. "button[" .. x .. "," .. y ..";1,1;play"..i..";"..i.."]"
+			but=but.. "button[" .. x .. "," .. y ..";1,1.2;play"..i..";"..i.."]"
 			x=x+1
-			if x==4 then
+			if x==8 then
 			x=0
-			y=y+2
+			y=y+2.5
 			end
 		end
        		meta:set_string("formspec",
-			"size[4.0,4.5]" .. but ..
-         "background[-0,-0;4,4.5;juke_bag.png]"
+			"size[8.0,6.5]" .. but ..
+         "background[-0,-0;8,6.5;juke_bag.png]"
          )
 	end,
 	on_receive_fields = function(pos, formname, fields, sender)
