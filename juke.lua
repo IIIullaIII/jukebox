@@ -20,8 +20,8 @@ jukebox_list={
 
 jukeboxloop={}
 
-minetest.register_node("jukebox:juke", {
-    description = "Juke",
+minetest.register_node("jukeloopbox:juke", {
+    description = "Jukebox loop",
 	alpha=50,
 		drawtype = "mesh",
             mesh= "juke.obj",

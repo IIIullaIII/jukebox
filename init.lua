@@ -8,7 +8,7 @@
 	})
 end)]]
 
-local modpath = minetest.get_modpath("jukebox")
+local modpath = minetest.get_modpath("jukeloopbox")
 
 -- Read configuration file
 dofile(modpath.."/juke.lua")
